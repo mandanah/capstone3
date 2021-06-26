@@ -80,19 +80,21 @@ prob(JB) is the p-value for the test with the null hypothesis that the residuals
 ### Auto-ARIMA
 To find the best model for all 52 zip codes in the data set I used auto_arima from pmdarima library to automatically find the best parameters for the ARIMA models for each zip code, Reference.
 "Auto-ARIMA works by conducting differencing tests (i.e., Kwiatkowski–Phillips–Schmidt–Shin, Augmented Dickey-Fuller or Phillips–Perron) to determine the order of differencing, d, and then fitting models within ranges of defined start_p, max_p, start_q, max_q ranges. If the seasonal optional is enabled, auto-ARIMA also seeks to identify the optimal P and Q hyper- parameters after conducting the Canova-Hansen to determine the optimal order of seasonal differencing, D. In order to find the best model, auto-ARIMA optimizes for a given information_criterion, one of (‘aic’, ‘aicc’, ‘bic’, ‘hqic’, ‘oob’) (Akaike Information Criterion, Corrected Akaike Information Criterion, Bayesian Information Criterion, Hannan-Quinn Information Criterion, or “out of bag”–for validation scoring–respectively) and returns the ARIMA which minimizes the value."
-Model 1: Univariate time series forecasting
+
+### Model 1: Univariate time series forecasting
 Plots below show the forecast real estate prices and diagnostics plots for a few zip codes.
 
 
 <b><p align="center">
-Zip code 60608</p><b>
+Zip code 60608</p>
+<b>
 
 ![model1_zipcode60608.png](/images/model1_zipcode60608.png)
 
 
 <b><p align="center">
-Zip code: 60612
-</p><b>
+Zip code: 60612</p>
+<b>
 
 ![model1_zipcode60612.png](/images/model1_zipcode60612.png)
 
@@ -142,5 +144,8 @@ real estate price prediction
 ![zipcode60612_housing.png](/images/zipcode60612_housing.png)
 
 
+To compare the performance of the two model, I found the mean absolute error and root mean squared error values of the models for 40 zip codes.
+(Model 1: RMSE = 45169.67, MAE=37834.17, r_squared:=0.87)
 
+ The results show that 
 By comparing the results of the two models we can see that the ARIMA model based on the univariate time series had better prediction results. 
