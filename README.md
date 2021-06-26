@@ -36,6 +36,7 @@ The plot below shows the change in housing price for all Chicago zip codes from 
 ![crime2.png](/images/crime2.png)
 ![crime3.png](/images/crime3.png)
 
+plots below show the correlation between the housing price, crime, and construction count for a few zipcodes.
 ![feature_target_corr_plot.png](/images/feature_target_corr_plot.png)
 
 ### ARIMA modeling procedure
