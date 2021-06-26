@@ -39,6 +39,11 @@ The plot below shows the change in housing price for all Chicago zip codes from 
 plots below show the correlation between the housing price, crime, and construction count for a few zipcodes.
 ![feature_target_corr_plot.png](/images/feature_target_corr_plot.png)
 
+plots below show the realtion between the housing price with crime and construction count.
+![feature_target_scatter_plot_1.png](/images/feature_target_scatter_plot_1.png)
+![feature_target_scatter_plot_2.png](/images/feature_target_scatter_plot_2.png)
+
+
 ### ARIMA modeling procedure
 
 **Checking for stationarity**: To test for stationarity of the time series I used the ndiffs function from pmdarima.arima which estimates the number of differences required to make a given time series stationary. I used the maximum value between the ndiffs results for Kwiatkowski–Phillips–Schmidt–Shin (KPSS) and Augmented Dickey–Fuller tests (ADF) tests for differencing. After making the time series stationary, I plotted the ACF and PACF to identify the correct model parameters.
@@ -78,21 +83,34 @@ To find the best model for all 52 zip codes in the data set I used auto_arima fr
 Model 1: Univariate time series forecasting
 Plots below show the forecast real estate prices and diagnostics plots for a few zip codes.
 
-**Zip code: 60608**
 
-**Diagnostic plots**
-![model1_zip60608_diag.png](/images/model1_zip60608_diag.png)
+<p align="center">
+Zip code 60608</p>
 
-**model prediction**
-![model1_zip60608_predict.png](/images/model1_zip60608_predict.png)
-
-**summary table**
-![model1_zip60608_table.png](/images/model1_zip60608_table.png)
+![model1_zipcode60608.png](/images/model1_zipcode60608.png)
 
 
 <p align="center">
-**Zip code: 60612**
+Diagnostic plots
 </p>
+
+![model1_zip60608_diag.png](/images/model1_zip60608_diag.png)
+
+<p align="center">
+model prediction </p>
+
+![model1_zip60608_predict.png](/images/model1_zip60608_predict.png)
+
+<p align="center">
+results
+</p>
+
+![model1_zip60608_table.png](/images/model1_zip60608_table.png)
+
+
+<b><p align="center">
+Zip code: 60612
+</p><b>
 
 
 
@@ -128,7 +146,6 @@ Construction count prediction**
 Crime prediction**
 ![crime_predict_60608_diag.png](/images/crime_predict_60608_diag.png)
 ![crime_predict_60608.png](/images/crime_predict_60608.png)
-
 
 
 **Zip code 60608
