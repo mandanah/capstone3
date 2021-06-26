@@ -84,40 +84,17 @@ Model 1: Univariate time series forecasting
 Plots below show the forecast real estate prices and diagnostics plots for a few zip codes.
 
 
-<p align="center">
-Zip code 60608</p>
+<b><p align="center">
+Zip code 60608</p><b>
 
 ![model1_zipcode60608.png](/images/model1_zipcode60608.png)
-
-
-<p align="center">
-Diagnostic plots
-</p>
-
-![model1_zip60608_diag.png](/images/model1_zip60608_diag.png)
-
-<p align="center">
-model prediction </p>
-
-![model1_zip60608_predict.png](/images/model1_zip60608_predict.png)
-
-<p align="center">
-results
-</p>
-
-![model1_zip60608_table.png](/images/model1_zip60608_table.png)
 
 
 <b><p align="center">
 Zip code: 60612
 </p><b>
 
-
-
-![model1_zip60612_diag.png](/images/model1_zip60612_diag.png)
-![model1_zip60612_predict.png](/images/model1_zip60612_predict.png)
-![model1_zip60612_table.png](/images/model1_zip60612_table.png)
-
+![model1_zipcode60612.png](/images/model1_zipcode60612.png)
 
 ### Model 2: Multivariate time series forecasting
 As mentioned before some factors such as crime, construction, and renovation count in a neighborhood can affect the real estate value in a positive or negative way. I used the total crime count and number of issued construction permits for each month as exogenous features in my model. To get a realistic idea of the model performance, I used ARIMA models to first predict the crime and construction count for the test time period based on the historical data and then used those results as an input to forecast the housing price. 
@@ -138,33 +115,26 @@ Plots below show the prediction results using auto-arima for the construction an
 
 **Zip code 60608
 Construction count prediction**
-![construction_predict_diag_60608.png](/images/construction_predict_diag_60608.png)
-![construction_predict_60608.png](/images/construction_predict_60608.png)
-
+![zipcode60608_construction.png](/images/zipcode60608_construction.png)
 
 **Zip code 60608
 Crime prediction**
-![crime_predict_60608_diag.png](/images/crime_predict_60608_diag.png)
-![crime_predict_60608.png](/images/crime_predict_60608.png)
+![zipcode60608_crime.png](/images/zipcode60608_crime.png)
 
 
 **Zip code 60608
 real estate price prediction**
-![house_predict_60608_diag.png](/images/house_predict_60608_diag.png)
-![house_predict_60608.png](/images/house_predict_60608.png)
-![house_predict_60608_table.png](/images/house_predict_60608_table.png)
+![zipcode60608_housing.png](/images/zipcode60608_housing.png)
 
-
-**Zip code 60612
-Construction and crime count predictions**
-![crime_const_predict_60612.png](/images/crime_const_predict_60612.png)
 
 
 **Zip code 60612
 real estate price prediction**
+![zipcode60612_housing.png](/images/zipcode60612_housing.png)
 
-![house_predict_60612.png](/images/house_predict_60612.png)
-![house_predict_60612_table.png](/images/house_predict_60612_table.png)
+
+
+
 
 
 -61048
