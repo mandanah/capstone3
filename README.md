@@ -142,10 +142,15 @@ real estate price prediction
 </p><b>
 
 ![zipcode60612_housing.png](/images/zipcode60612_housing.png)
-
-
+ 
+### Results 
 To compare the performance of the two model, I found the mean absolute error and root mean squared error values of the models for 40 zip codes.
-(Model 1: RMSE = 45169.67, MAE=37834.17, r_squared:=0.87)
+* Model 1: RMSE = 45169, MAE = 37834, R squared = 0.87
+* Model 2: RMSE = 37290, MAE = 30369, R squared = 0.91
 
- The results show that 
-By comparing the results of the two models we can see that the ARIMA model based on the univariate time series had better prediction results. 
+
+The results show that model 2 (ARIMA model based on multivariate time series) is more successful on forecasting the housing prices.
+
+### Future Improvements
+ 
+Trying different exogenous variables such as population, GDP might be helpful.
