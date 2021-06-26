@@ -47,7 +47,9 @@ plots below show the realtion between the housing price with crime and construct
 ### ARIMA modeling procedure
 
 **Checking for stationarity**: To test for stationarity of the time series I used the ndiffs function from pmdarima.arima which estimates the number of differences required to make a given time series stationary. I used the maximum value between the ndiffs results for Kwiatkowski–Phillips–Schmidt–Shin (KPSS) and Augmented Dickey–Fuller tests (ADF) tests for differencing. After making the time series stationary, I plotted the ACF and PACF to identify the correct model parameters.
+
 **Plotting ACF and PACF**: The ACF plot shows the correlation between a time series and the lagged version of itself. The PACF plot also shows the correlation between a time series and the lagged version of itself after we removed the correlation effects of the smaller lags.
+
 **Finding model parameters**:
 The parameters of the arima model are:
 p: number of lagged observation considered in the model
@@ -58,9 +60,11 @@ If the amplitude of the ACF plot tails off with increasing lags and PACF cuts of
 If the amplitude of ACF cuts off after q lags and PACF tails off, we have a MA(q) model.
 If both ACF and PACF amplitudes tail off then, we have an ARMA(p,q) model and we can't find the p and q value from the plots.
 I used Akaike information criterion (AIC) and Bayesian information criterion (BIC) for model selection. Both BIC and AIC penalize models that are overly complex and have more parameters. Lower AIC indicates a better model.
+
 **Model diagnostics**:
 For model diagnostics I looked at the residual plots. Residuals of an ideal model should be uncorrelated white Guassian noise centered around zero.
 Diagnostics plots
+
 **Standardized residuals Plot**: In this plot the residuals should be distributed randomly with no obvious structure.
 
 
@@ -144,7 +148,7 @@ real estate price prediction
 ![zipcode60612_housing.png](/images/zipcode60612_housing.png)
  
 ### Results 
-To compare the performance of the two model, I found the mean absolute error and root mean squared error values of the models for 40 zip codes.
+To compare the performance of the two models, I found the mean absolute error and root mean squared error values of the models for 40 zip codes.
 * Model 1: RMSE = 45169, MAE = 37834, R squared = 0.87
 * Model 2: RMSE = 37290, MAE = 30369, R squared = 0.91
 
