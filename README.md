@@ -79,8 +79,13 @@ Plots below show the forecast real estate prices and diagnostics plots for a few
 
 **Zip code: 60608**
 
+**Diagnostic plots**
 ![model1_zip60608_diag.png](/images/model1_zip60608_diag.png)
+
+**model prediction**
 ![model1_zip60608_predict.png](/images/model1_zip60608_predict.png)
+
+**summary table**
 ![model1_zip60608_table.png](/images/model1_zip60608_table.png)
 
 
