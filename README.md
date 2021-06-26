@@ -112,30 +112,35 @@ To better understand the seasonality of the data, I plotted the ACF for all thre
 
 Plots below show the prediction results using auto-arima for the construction and crime count and the real estate price forecast based on crime and construction count predictions for zip codes 60608 and zip code 60612.
 
+<b><p align="center">
+Zip code 60608
+Construction count prediction
+</p><b>
 
-**Zip code 60608
-Construction count prediction**
 ![zipcode60608_construction.png](/images/zipcode60608_construction.png)
 
-**Zip code 60608
-Crime prediction**
+<b><p align="center">
+Zip code 60608
+Crime prediction
+</p><b>
+
 ![zipcode60608_crime.png](/images/zipcode60608_crime.png)
 
+<b><p align="center">
+Zip code 60608
+real estate price prediction
+</p><b>
 
-**Zip code 60608
-real estate price prediction**
 ![zipcode60608_housing.png](/images/zipcode60608_housing.png)
 
 
+<b><p align="center">
+Zip code 60612
+real estate price prediction
+</p><b>
 
-**Zip code 60612
-real estate price prediction**
 ![zipcode60612_housing.png](/images/zipcode60612_housing.png)
 
 
 
-
-
-
--61048
 By comparing the results of the two models we can see that the ARIMA model based on the univariate time series had better prediction results. 
