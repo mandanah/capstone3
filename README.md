@@ -1,10 +1,11 @@
 # Predicting Median Housing Prices for Chicago Zip Codes Three Years  in Advance 
+![intro_pic.jpg](/images/intro.jpg)
 
 In larger cities old and neglected neighborhoods can quickly transform into a popular and trendy neighborhood with high real estate demand and sharp increase in the real estate prices. If detected early, these areas can be a good real estate investment opportunity. The goal of this project is to estimate the median real estate prices for all Chicago zip codes three years in advance. The result would be of interest to future home buyers and real estate investors. 
 
 I used ARIMA models to estimate the real estate prices three years in advance. Arima (AutoRegressive Integrated Moving Average) is a popular and widely used method for time series forecasting. I developed two arima models for housing price forecasting. The first model uses a univariate time series in which I only used the historical housing price to forecast the housing price in the next three years. In the second model I used two exogenous variables (number of issued construction permits per month and monthly crime rate) as well as the historical housing prices to predict the future housing price. If crime rate increases in a neighborhood people start to leave and there would be high supply and low demand, this will cause a drop in real estate values, the opposite is also valid.
 
-Data Sources: 
+### Data Sources: 
 
 building permits : City of Chicago Data Portal
 crime rate: City of Chicago Website    
@@ -16,17 +17,25 @@ Problem 3. There are 7,301,707 crime entries in the crime dataset of which 71,93
 EDA
 Housing price: Looking at the housing price distribution over time for all the zipcodes in Chicago we can see that the price difference between the most expensive and the cheapest housings increases over time. Showing that although all zip codes saw an increase in housing price since 1996, in some zip codes the housing value increased much more compared to the other zip codes. We also can see the housing market crash starting 2008 and the median housing price has still not recovered to its value before the crash 
 
+![housing1.png](/images/housing1.png)
+![housing2.png](/images/housing2.png)
 
 The plot below shows the change in housing price for all Chicago zip codes from 2016 to 2019. We can see from this graph that zip codes 60651, 60653, 60644, and 60612 have the maximum increase in the value over this time period however some zip codes such as 60602 and 60603 saw a decrease in housing prices. 
 
+![housing3.png](/images/housing3.png)
 
 Building permits I plotted the distribution of the number of issued permits for all zip codes from 2004 to 2021. As can be seen, the data before 2006 is not complete and I only used the data after 2006 for modeling. In each year there are few zip codes that are outliers and have much more construction counts compared to other zip codes. We can see that the median construction count dropped during the housing market crises but slowly increased afterwards. To have a better understanding of how much construction count in a zip code changed over time, I also plotted the change in the number of permits issued for a given time period for all the zipcodes. 
 
+![building1.png](/images/building1.png)
+![building2.png](/images/building2.png)
 
 
 Crime I plotted the theft count distribution over time and we can see clearly that overall the number of theft incidents has decreased over time. To see how different crime types have changed over time for a specific zip code, I plotted bar plots of 7 different crime types for zip codes 60603, 60604, 60653, and 60612. Zip code 60603 has seen a decrease in housing value over the last 5 years and we can see from the plot below that crime rate has increased in this zip code over this time period. Housing price value increased only slightly over the last 5 years and we can see the crime rate for this zip code has increased as well. Zip codes 60653 and 60612 were among the zip codes that saw the maximum increase in housing value over this time period and we can see that the crime rate has decreased for these zip codes.   
+![crime1.png](/images/crime1.png)
+![crime2.png](/images/crime2.png)
+![crime3.png](/images/crime3.png)
 
-
+![feature_target_corr_plot.png](/images/feature_target_corr_plot.png)
 
 ARIMA modeling procedure:
 
@@ -69,6 +78,10 @@ Plots below show the forecast real estate prices and diagnostics plots for a few
 
 Zip code: 60608
 
+![model1_zip60608_diag.png](/images/model1_zip60608_diag.png)
+![model1_zip60608_predict.png](/images/model1_zip60608_predict.png)
+![model1_zip60608_table.png](/images/model1_zip60608_table.png)
+
 
 
 
@@ -76,17 +89,23 @@ Zip code: 60608
 Zip code: 60612
 
 
-
+![model1_zip60612_diag.png](/images/model1_zip60612_diag.png)
+![model1_zip60612_predict.png](/images/model1_zip60612_predict.png)
+![model1_zip60612_table.png](/images/model1_zip60612_table.png)
 
 
 Model 2: Multivariate time series forecasting
 As mentioned before some factors such as crime, construction, and renovation count in a neighborhood can affect the real estate value in a positive or negative way. I used the total crime count and number of issued construction permits for each month as exogenous features in my model. To get a realistic idea of the model performance, I used ARIMA models to first predict the crime and construction count for the test time period based on the historical data and then used those results as an input to forecast the housing price. 
 By plotting the crime count for a few zip codes we clearly can see the downward trend and yearly seasonality in the crime data. Crime increases during the summer time and decreases over the winter. The construction data also appears to have yearly seasonality although does not show a clear trend.
 
+![historical_crime_60608.png](/images/historical_crime_60608.png)
+![historical_construction_60608.png](/images/historical_construction_60608.png)
+
 
 
 To better understand the seasonality of the data, I plotted the ACF for all three time series. 
 
+![ACF_60608.png](/images/ACF_60608.png)
 
 
 Plots below show the prediction results using auto-arima for the construction and crime count and the real estate price forecast based on crime and construction count predictions for zip codes 60608 and zip code 60612.
@@ -94,28 +113,34 @@ Plots below show the prediction results using auto-arima for the construction an
 
 Zip code 60608
 Construction count prediction
-
+![construction_predict_diag_60608.png](/images/construction_predict_diag_60608.png)
+![construction_predict_60608.png](/images/construction_predict_60608.png)
 
 
 Zip code 60608
 Crime prediction
+![crime_predict_60608_diag.png](/images/crime_predict_60608_diag.png)
+![crime_predict_60608.png](/images/crime_predict_60608.png)
 
 
 
 Zip code 60608
 real estate price prediction
-
-
-
+![house_predict_60608_diag.png](/images/house_predict_60608_diag.png)
+![house_predict_60608.png](/images/house_predict_60608.png)
+![house_predict_60608_table.png](/images/house_predict_60608_table.png)
 
 
 Zip code 60612
 Construction and crime count predictions
+![crime_const_predict_60612.png](/images/crime_const_predict_60612.png)
 
 
 Zip code 60612
 real estate price prediction
 
+![house_predict_60612.png](/images/house_predict_60612.png)
+![house_predict_60612_table.png](/images/house_predict_60612_table.png)
 
 
 -61048
